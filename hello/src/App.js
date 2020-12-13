@@ -1,11 +1,15 @@
+import React, {Component} from 'react';
+
 function App() {
   return (
-    <div>
-      <p>
-        Hello!! React
-      </p>
-    </div>
-  );
+    <React.Fragment>
+      <label htmlFor="bar">
+        bar
+      </label>
+      <input type="text" onChange={() => {console.log("change!")}} />;
+    </React.Fragment>
+  ) 
+
 }
 
 export default App;
