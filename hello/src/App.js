@@ -1,33 +1,40 @@
+
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+
 
 
 
 const App = () => {
-  const porpsfile =[
-    {
-      name: "aaa",age: 10
-    },
-    {
-      name: "bbbb"
-    }
-  ]
-  porpsfile.PropTypes = {
-    name: PropTypes.string,
-    age: PropTypes.number.isRequired
-  }
+
+
   return (
-    <div>
-      {
-        porpsfile.map((p, index) => {
-          return <User name={p.name} age={p.age} key={index}/>
-        })
-      }
-    </div>
+    <Counter></Counter>
   )
 }
-const User = (props) => {
-  return <div>Hi!! {props.name} {props.age} です</div>
+class Counter extends Component {
+  constructor(prop) {
+    super(prop)
+    this.state = {count:0}
+  }
+handlepulath = () => {
+  const count = this.state.count
+  this.setState({count: count + 1})
+}
+mainasu = () => {
+  this.setState({count: this.state.count -1})
+}
+
+  render() {
+
+  return (
+    <React.Fragment>
+      <div>count: {this.state.count}</div>
+      <button onClick={this.handlepulath}>+1</button>
+      <button onClick={this.mainasu}>-1</button>
+
+    </React.Fragment>
+  )
+  }
 }
 
 
