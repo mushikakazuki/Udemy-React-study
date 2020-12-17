@@ -21,9 +21,8 @@ const mapStateToProps = state => ({
   value: state.count.value
 })
 
-const mapDispatchProps = dispath => ({
-  incliment: () => dispath(incliment()),
-  decrement: () => dispath(decrement())
+const mapDispatchProps = ({
+  incliment, decrement
 })
 
 export default connect(mapStateToProps,mapDispatchProps)(App);
